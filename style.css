@@ -1,0 +1,98 @@
+h1 {
+	text-align:center;
+}
+
+main {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+#editor {
+    width: 35vw;
+	margin-left: 10px;
+	margin-right: 50px;
+    background-color: #EEE;
+    padding: 20px;
+	border-radius: 5px;
+	border:1px solid #BBB;
+	font-size: 18px;
+	overflow-y: scroll;
+	height: 75vh;
+}
+
+.markdownTitles{
+	color:darkblue;
+	font-weight:bold;
+	font-size:1.1em;
+}
+.markdownBold{font-weight:bold}
+.markdownItalic{font-style: italic;}
+.markdownLists{color:darkblue;font-weight:bold;}
+.markdownLinksText{color:darkblue;}
+.markdownLinksURL{color:blue;}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: black;
+	shape-rendering: crispEdges;
+}
+
+.axis text {
+	font-family: sans-serif;
+	font-size: 10px;
+}
+
+.timeline-label {
+	font-family: sans-serif;
+	font-size: 12px;
+}
+
+.coloredDiv {
+	height: 20px;
+	width: 20px;
+	float: left;
+}
+
+[class*="acquisition"] {
+	fill: darkblue !important;
+}
+[class*="discussion"] {
+	fill: red !important;
+}
+[class*="production"] {
+	fill: orange !important;
+}
+rect + rect {
+	opacity: 0.7;
+}
+rect + rect + rect {
+	opacity: 0.6;
+}
+rect + rect + rect + rect {
+	opacity: 0.5;
+}
+
+text.textlabels {
+	display:none;
+}
+
+#timelineDescriptifBloc {
+	height: 1em;
+	margin-left: 2em;
+	margin-top: 1.5em;
+}
+
+svg {
+	overflow: visible;
+}
+
+
+@media print {
+	div {margin:auto}
+	#editor {
+		background-color: white;
+	height:auto;
+width: 100%;}
+}

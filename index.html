@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<head>
+		<!-- <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+		<script src="http://d3js.org/d3.v6.min.js" charset="utf-8"></script>
+		<script src="https://unpkg.com/d3-array@1"></script>
+		<script src="https://unpkg.com/d3-collection@1"></script>
+		<script src="https://unpkg.com/d3-path@1"></script>
+		<script src="https://unpkg.com/d3-shape@1"></script>
+		<script src="https://unpkg.com/d3-color@0"></script>
+		<script src="https://unpkg.com/d3-scale@0"></script>
+		<script src="https://unpkg.com/d3-sankey@0"></script>
+		<script src="d3-timeline.js"></script>
+		<script src="codejar.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+<body>
+
+	<h1>Scénarisation pédagogique</h1>
+
+	<main>
+		<div id="editor"></div>
+
+		<div>
+			<div>
+				<h2>Déroulement chronologique</h2>
+				<div id="timelineDescriptifBloc"></div>
+				<div width="100%" id="timeline"></div>
+			</div>
+
+			<div>
+				<h2>Statistiques</h2>
+				<div width="100%" id="sankey">
+				</div>
+			</div>
+		</div>
+	</main>
+	<script src="create-timeline.js" charset="utf-8"></script>
+	<script src="create-sankey.js" charset="utf-8"></script>
+	<script src="create-vizualisation.js" charset="utf-8"></script>
+	<script src="editor.js" charset="utf-8"></script>
+</body>
+
+</html>
