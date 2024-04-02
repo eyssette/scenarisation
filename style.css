@@ -1,36 +1,47 @@
 h1 {
-	text-align:center;
+	text-align: center;
 }
 
 main {
-	display:flex;
+	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 }
 
 #editor {
-    width: 35vw;
+	width: 35vw;
 	margin-left: 10px;
 	margin-right: 50px;
-    background-color: #EEE;
-    padding: 20px;
+	background-color: #eee;
+	padding: 20px;
 	border-radius: 5px;
-	border:1px solid #BBB;
+	border: 1px solid #bbb;
 	font-size: 18px;
 	overflow-y: scroll;
 	height: 75vh;
 }
 
-.markdownTitles{
-	color:darkblue;
-	font-weight:bold;
-	font-size:1.1em;
+.markdownTitles {
+	color: darkblue;
+	font-weight: bold;
+	font-size: 1.1em;
 }
-.markdownBold{font-weight:bold}
-.markdownItalic{font-style: italic;}
-.markdownLists{color:darkblue;font-weight:bold;}
-.markdownLinksText{color:darkblue;}
-.markdownLinksURL{color:blue;}
+.markdownBold {
+	font-weight: bold;
+}
+.markdownItalic {
+	font-style: italic;
+}
+.markdownLists {
+	color: darkblue;
+	font-weight: bold;
+}
+.markdownLinksText {
+	color: darkblue;
+}
+.markdownLinksURL {
+	color: blue;
+}
 
 .axis path,
 .axis line {
@@ -75,7 +86,7 @@ rect + rect + rect + rect {
 }
 
 text.textlabels {
-	display:none;
+	display: none;
 }
 
 #timelineDescriptifBloc {
@@ -88,11 +99,13 @@ svg {
 	overflow: visible;
 }
 
-
 @media print {
-	div {margin:auto}
+	div {
+		margin: auto;
+	}
 	#editor {
 		background-color: white;
-	height:auto;
-width: 100%;}
+		height: auto;
+		width: 100%;
+	}
 }

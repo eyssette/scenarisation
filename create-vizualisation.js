@@ -59,12 +59,8 @@ function createViz(parsedMD) {
 		"Collaboration",
 		"Enquête",
 	];
-	const sankeyLabelsTargets = [
-		"Classe entière",
-		"Groupes",
-		"Individuel"
-	];
-	const sankeyLabels = sankeyLabelsSources.concat(sankeyLabelsTargets);	
+	const sankeyLabelsTargets = ["Classe entière", "Groupes", "Individuel"];
+	const sankeyLabels = sankeyLabelsSources.concat(sankeyLabelsTargets);
 
 	function selectByLabelsSource(array, label) {
 		return array.filter((subArray) => subArray[0] === label);
@@ -81,12 +77,17 @@ function createViz(parsedMD) {
 		parsedMDbyLabelsSource[i] = selectByLabelsSource(parsedMD, label);
 	});
 
-	const existingSources = sankeyLabelsSources.filter(item => parsedMD.toString().includes(item))
-	const existingTargets = sankeyLabelsTargets.filter(item => parsedMD.toString().includes(item))
-	const existingLabels = existingSources.concat(existingTargets)
+	const existingSources = sankeyLabelsSources.filter((item) =>
+		parsedMD.toString().includes(item)
+	);
+	const existingTargets = sankeyLabelsTargets.filter((item) =>
+		parsedMD.toString().includes(item)
+	);
+	const existingLabels = existingSources.concat(existingTargets);
 
-
-	let nodesSankey = existingLabels.map(item => {return {name: item, id: sankeyLabels.indexOf(item)}});
+	let nodesSankey = existingLabels.map((item) => {
+		return { name: item, id: sankeyLabels.indexOf(item) };
+	});
 	// const existingSources = sankeyLabels.filter(item => parsedMD.toString().includes(item))
 
 	//parsedMD.forEach((element) => {
@@ -135,8 +136,8 @@ function createViz(parsedMD) {
 					id: linkID,
 					idSource: sourceIDExistingSources,
 					idTarget: targetIDGeneral,
-					source: sourceIDExistingSources
-				})
+					source: sourceIDExistingSources,
+				});
 				linkID++;
 			}
 
@@ -151,17 +152,15 @@ function createViz(parsedMD) {
 	// 	return a.id - b.id;
 	// });
 
-// nodesSankey = nodesSankey.sort(function(a,b){return b.value-b.value})
-// console.log(linksSankey)
-// linksSankey = linksSankey.sort(function(a,b){return a.value - b.value})
-// console.log(linksSankey)
+	// nodesSankey = nodesSankey.sort(function(a,b){return b.value-b.value})
+	// console.log(linksSankey)
+	// linksSankey = linksSankey.sort(function(a,b){return a.value - b.value})
+	// console.log(linksSankey)
 
 	const dataSankey = {
 		nodes: nodesSankey,
 		links: linksSankey,
 	};
-
-
 
 	createSankey(dataSankey);
 }

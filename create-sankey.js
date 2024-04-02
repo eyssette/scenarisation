@@ -17,15 +17,17 @@ function createSankey(data) {
 		.domain([0, d3.max(data.links, (d) => d.value)])
 		.range([0, heightSankey]);
 
-    // function id(d) {
-    //     return d.name;
-    //     }
+	// function id(d) {
+	//     return d.name;
+	//     }
 
 	// Création de l'objet Sankey
 	const sankeyGenerator = d3
 		.sankey()
-        //.nodeId(id)
-        .nodeSort(function(a,b){return b.value-a.value})
+		//.nodeId(id)
+		.nodeSort(function (a, b) {
+			return b.value - a.value;
+		})
 		.nodeWidth(20)
 		.nodePadding(10)
 		.extent([
@@ -38,7 +40,7 @@ function createSankey(data) {
 
 	const myColor = d3.scaleOrdinal(d3.schemeCategory10);
 
-    // const myColor = d3.scaleOrdinal().domain(["Acquisition","Pratique / Entraînement","Discussion", "Production","Collaboration", "Enquête","Classe entière","Groupes", "Individuel"]).range(d3.schemeCategory10);
+	// const myColor = d3.scaleOrdinal().domain(["Acquisition","Pratique / Entraînement","Discussion", "Production","Collaboration", "Enquête","Classe entière","Groupes", "Individuel"]).range(d3.schemeCategory10);
 
 	svg
 		.append("defs")
