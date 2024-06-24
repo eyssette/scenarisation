@@ -1,3 +1,8 @@
+// Pour mettre en majuscule la première lettre
+function firstLetterUpperCase(str) {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 // Gestion timeline
 function createTimeline(dataTimeline) {
 	const widthTimeline = 500;
@@ -28,8 +33,12 @@ function createTimeline(dataTimeline) {
 				tickSize: 15,
 			})
 			.mouseover(function (d, i, datum) {
-				if (i.label) {
-					timelineDescriptifBloc.innerHTML = i.label;
+				if (datum && i.label) {
+					const typeActivite = firstLetterUpperCase(datum.class);
+					const labelSplit = i.label.split(':')
+					const typeRegroupement = labelSplit[0].trim().toLowerCase();
+					const descriptifActivite = labelSplit[1].trim();
+					timelineDescriptifBloc.innerHTML = typeActivite + ' (' + typeRegroupement + ') : ' + descriptifActivite;
 				}
 			})
 			.mouseout(function (d, i, datum) {
